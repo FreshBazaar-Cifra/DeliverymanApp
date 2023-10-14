@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { Image, SafeAreaView, View } from "react-native";
+import { Alert, Image, SafeAreaView, View } from "react-native";
 import Input from "../components/Input";
 import Icon from 'react-native-vector-icons/Feather';
 import MyButton from "../components/MyButton";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import UserService from "../services/UserService";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
@@ -15,6 +16,19 @@ const LoginScreen = () => {
     if (!username.trim() || !password.trim()) {
       return;
     }
+
+    UserService.login(username, password)
+      .then(res => {
+        if (!res.ok)
+          throw new Error("Неправильный логин или пароль.");
+        return res.json();
+      })
+      .then(data => {
+        login(data.token);
+      })
+      .catch(err => {
+        Alert.alert("Error", err.message);
+      });
   }
 
   return (
@@ -28,6 +42,7 @@ const LoginScreen = () => {
         justifyContent: "center",
         flex: 1,
       }}>
+
         <Image style={{height: 200, width: 220, marginBottom: 32}} source={require("../assets/images/logo.png")}/>
 
         <Input icon={

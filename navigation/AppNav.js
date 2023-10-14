@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import { ActivityIndicator, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./AuthStack";
+import AppStack from "./AppStack";
 
 export function AppNav() {
   const {isLoading, userToken} = useContext(AuthContext);
@@ -17,7 +18,9 @@ export function AppNav() {
 
   return (
     <NavigationContainer>
-      <AuthStack/>
+      {
+        !userToken ? <AppStack/> : <AuthStack/>
+      }
     </NavigationContainer>
   )
 }
