@@ -19,7 +19,7 @@ export function AppNav() {
   return (
     <NavigationContainer>
       {
-        !userToken ? <AppStack/> : <AuthStack/>
+        userToken ? <AppStack/> : <AuthStack/>
       }
     </NavigationContainer>
   )

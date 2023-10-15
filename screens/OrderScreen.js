@@ -13,7 +13,29 @@ import ErrorText from "../components/ErrorText";
 import OrderProductsList from "../components/OrderProductsList";
 
 const OrderScreen = ({ route, navigation }) => {
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState({
+    id: 21,
+    date: "2022-09-28 12:29:21.000000",
+    status: "confirmed",
+    price: 100,
+    delivery_price: 10,
+    total: 100,
+    market: {
+      name: "Центральный рынок",
+      address: {
+        street: "ул. Пушкинская",
+        home: 8,
+        latitude: "51.6656114",
+        longitude: "39.3921222",
+      }
+    },
+    address: {
+      street: "ул. Кольцовская",
+      home: "1Д",
+      latitude: "51.6750844",
+      longitude: "39.2129016",
+    }
+  });
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -33,7 +55,7 @@ const OrderScreen = ({ route, navigation }) => {
   };
 
   useEffect(() => {
-    fetchOrder();
+    // fetchOrder();
   }, [id]);
 
   console.log(order);
@@ -66,10 +88,6 @@ const OrderScreen = ({ route, navigation }) => {
           !isLoading && !error && <>
 
             <OrderMapContainer order={order} />
-            {
-              order.positions?.length > 0 &&
-              <OrderProductsList products={order.positions} />
-            }
             <OrderDetails order={order} />
             <OrderStatus order={order} fetchOrder={fetchOrder} />
 

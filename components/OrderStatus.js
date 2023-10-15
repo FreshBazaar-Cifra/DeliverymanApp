@@ -72,7 +72,7 @@ const OrderStatus = ({ order, fetchOrder }) => {
 
       <View style={{ padding: 16 }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={{ fontSize: 18 }}>Статус заказа:</Text>
+          <Text style={{ fontSize: 18, color: "#000" }}>Статус заказа:</Text>
           <View
             style={{
               display: "flex",

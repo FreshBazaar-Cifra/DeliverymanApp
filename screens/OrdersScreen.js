@@ -10,7 +10,31 @@ import ErrorText from "../components/ErrorText";
 import { AuthContext } from "../context/AuthContext";
 
 const OrdersScreen = ({ navigation }) => {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([
+    {
+      id: 21,
+      date: "2022-09-28 12:29:21.000000",
+      status: "confirmed",
+      price: 100,
+      delivery_price: 10,
+      total: 100,
+      market: {
+        name: "Центральный рынок",
+        address: {
+          street: "ул. Пушкинская",
+          home: 8,
+          latitude: "51.6656114",
+          longitude: "39.3921222",
+        }
+      },
+      address: {
+        street: "ул. Кольцовская",
+        home: "1Д",
+        latitude: "51.6750844",
+        longitude: "39.2129016",
+      }
+    }
+  ]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [filter, setFilter] = useState("all");
@@ -23,6 +47,7 @@ const OrdersScreen = ({ navigation }) => {
   const fetchAllOrders = () => {
     setLoading(true);
     setError("");
+    console.log(userToken)
     OrdersService.getAllOrders(userToken)
       .then(res => {
         if (res.status === 404) throw new Error("Заказов не найдено")
@@ -55,7 +80,7 @@ const OrdersScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-    filter === "all" ? fetchAllOrders() : fetchOrders();
+    // filter === "all" ? fetchAllOrders() : fetchOrders();
   }, [filter]);
 
   return (

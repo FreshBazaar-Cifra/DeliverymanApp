@@ -47,7 +47,7 @@ const Order = ({ navigation, order }) => {
         gap: 4,
       }}>
         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <Text style={{ fontSize: 18 }}>#{order.id}</Text>
+          <Text style={{ fontSize: 18, color: "#000" }}>#{order.id}</Text>
           <View
             style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <Icon name="circle" size={8} color={orderColor[order.status]} style={{ marginRight: 4 }} />
@@ -79,7 +79,7 @@ const Order = ({ navigation, order }) => {
           gap: 8,
         }}>
           <Text style={{ width: "50%", color: "#A0A0A0" }}>{order.market.name}</Text>
-          <Text style={{ width: "50%", color: "#A0A0A0" }}>{getJoinedAddress(order.address)}</Text>
+          <Text style={{ width: "50%", color: "#A0A0A0", textAlign: "right" }}>{getJoinedAddress(order.address)}</Text>
         </View>
         {
           order.status === "new" && <View>

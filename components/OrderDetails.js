@@ -14,7 +14,7 @@ const OrderDetails = ({order}) => {
           borderColor: "#E2E2E2",
           paddingBottom: 4,
         }}>
-        <Text style={{ fontSize: 18, }}>Способ оплаты:</Text>
+        <Text style={{ fontSize: 18, color: "#000" }}>Способ оплаты:</Text>
         <Text style={{ color: "#A0A0A0", }}>Онлайн</Text>
       </View>
       <View
@@ -27,7 +27,7 @@ const OrderDetails = ({order}) => {
           borderColor: "#E2E2E2",
           paddingBottom: 4,
         }}>
-        <Text style={{ fontSize: 18, }}>Заказ:</Text>
+        <Text style={{ fontSize: 18, color: "#000" }}>Заказ:</Text>
         <Text style={{ color: "#A0A0A0", }}>{getFormattedPrice(order.price)}</Text>
       </View>
       <View
@@ -40,7 +40,7 @@ const OrderDetails = ({order}) => {
           borderColor: "#E2E2E2",
           paddingBottom: 4,
         }}>
-        <Text style={{ fontSize: 18, }}>Доставка:</Text>
+        <Text style={{ fontSize: 18, color: "#000" }}>Доставка:</Text>
         <Text style={{ color: "#A0A0A0", }}>{getFormattedPrice(order.delivery_price)}</Text>
       </View>
       <View
@@ -53,7 +53,7 @@ const OrderDetails = ({order}) => {
           borderColor: "#E2E2E2",
           paddingBottom: 4,
         }}>
-        <Text style={{ fontSize: 18, }}>Итого:</Text>
+        <Text style={{ fontSize: 18, color: "#000" }}>Итого:</Text>
         <Text style={{ color: "#A0A0A0", }}>{getFormattedPrice(order.price + order.delivery_price)}</Text>
       </View>
     </View>

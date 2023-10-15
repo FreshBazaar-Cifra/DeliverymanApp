@@ -19,14 +19,14 @@ const OrderMapContainer = ({ order }) => {
         <View style={{ flexDirection: "row", gap: 8, alignItems: "center", }}>
           <AntDesign size={44} name="export" color="#33363F"/>
           <View>
-            <Text style={{ fontSize: 14, }}>{order?.market?.name}</Text>
+            <Text style={{ fontSize: 14, color: "#000" }}>{order?.market?.name}</Text>
             <Text style={{ color: "#A3A3A3", }}>{getJoinedAddress(order?.market?.address)}</Text>
           </View>
         </View>
         <View style={{ flexDirection: "row", gap: 8, alignItems: "center", }}>
           <MaterialIcons size={44} name="outlined-flag" color="#33363F"/>
           <View>
-            <Text style={{ fontSize: 14, }}>{getJoinedAddress(order?.address)}</Text>
+            <Text style={{ fontSize: 14, color: "#000" }}>{getJoinedAddress(order?.address)}</Text>
           </View>
         </View>
 

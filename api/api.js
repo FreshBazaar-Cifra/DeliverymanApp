@@ -1,2 +1,2 @@
-export const authURL = "http://localhost:3000/";
-export const deliverymanURL = "http://localhost:3000/";
+export const authURL = "https://auth.freshbazaa.ru/deliveryman";
+export const deliverymanURL = "https://delivery.freshbazaa.ru";
