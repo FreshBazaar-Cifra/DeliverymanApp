@@ -1,3 +1,10 @@
+Приложение написано на React Native, для запуска приложения просто установите app-release.apk файл на ваше мобильное устройство.
+
+Если вам необходимо запустить исходный код на эмуляторе android, то необходимо следовать инструкциям, представленным в официальной документации React Native: https://reactnative.dev/docs/environment-setup.
+Мы рекомендуем смотреть в сторону apk файла, так как запуск приложения на эмуляторе несет за собой установку Android Studio, React Native и их связки в системе.
+
+Ниже представлены инструкции, автоматически сгенерированные при создании приложения. Следовать им можно только после полной установки всех сопутсвующих зависимостей (Android Studio, React Native, зависимости из package.json (npm i для установки)).
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
